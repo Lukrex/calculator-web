@@ -6,35 +6,51 @@
     position: absolute;
     left: 0; bottom: 0;
     width: 100%;
+    z-index: -999;
 }
 * { font-family: 'League Spartan', sans-serif; }
 body { 
     font-size: 16px;
+    transition: background-color 0.5s;
 }
 .body1 { background-color: hsl(222, 26%, 31%); }
-.header { 
+.body2 { background-color: hsl(0, 0%, 90%); }
+.body3 { background-color: hsl(268, 75%, 9%); }
+.header1, .header2, .header3 { 
     position: absolute;
     left: 50%;
-    top: 12%;
+    top: 2.25em;
     transform: translate(-420%, -50%);
     color: #fff;
     font-size: 1.8em;
+    transition: color 0.5s;
 }
-.p-theme {
+.header2 { color: hsl(60, 10%, 19%); }
+.header3 { color: hsl(52, 100%, 62%); }
+.p-theme1, .p-theme2, .p-theme3 {
     color: #fff;
     position: absolute;
     left: 50%;
-    top: 12%;
-    transform: translate(50%, -50%);
+    top: 6.8em;
+    transform: translate(250%, -50%);
+    font-size: 0.7em;
+    transition: color 0.5s;
 }
-.t1, .t2, .t3 {
+.p-theme2 { color: hsl(60, 10%, 19%); }
+.p-theme3 { color: hsl(52, 100%, 62%); }
+.numbers1 {
     color: #fff;
     position: absolute;
     left: 50%;
-    top: 8%;
-    transform: translate(2000%, -50%);
+    top: 4.75em;
+    font-size: 0.7em;
+    transition: color 0.5s;
 }
-.t2 { transform: translate(1500%, -50%); }
+.numbers2 { color: hsl(60, 10%, 19%); }
+.numbers3 { color: hsl(52, 100%, 62%); }
+.t1 { transform: translate(4190%, -50%); }
+.t2 { transform: translate(2655%, -50%); }
+.t3 { transform: translate(3105%, -50%); }
 input {
     -webkit-appearance: none;
     appearance: none;
@@ -42,12 +58,13 @@ input {
     border-radius: 2em;
     position: absolute;
     left: 50%;
-    top: 14.1%;
-    transform: translate(105%, -50%);
+    top: 6.35em;
+    transform: translate(250%, -50%);
     height: 1.5em;
-    width: 6em;
+    width: 3.5em;
     padding: 0 0.4em;
     cursor: pointer;
+    transition: background-color 0.5s;
 }
 input::-webkit-slider-thumb {
     width: 0.95em;
@@ -65,8 +82,14 @@ input::-moz-range-thumb {
     cursor: pointer;
 }
 .input1 { background-color: hsl(223, 31%, 20%); }
-.input1::-webkit-slider-thumb {background: hsl(6, 63%, 50%);}
-.input1::-moz-range-thumb {background: hsl(6, 63%, 50%);}
+.input2 { background-color: hsl(0, 5%, 81%); }
+.input3 { background-color: hsl(268, 71%, 12%); }
+.input1::-webkit-slider-thumb { background: hsl(6, 63%, 50%); }
+.input1::-moz-range-thumb { background: hsl(6, 63%, 50%); }
+.input2::-webkit-slider-thumb { background: hsl(25, 98%, 40%); }
+.input2::-moz-range-thumb { background: hsl(25, 98%, 40%); }
+.input3::-webkit-slider-thumb { background: hsl(176, 100%, 44%); }
+.input3::-moz-range-thumb { background: hsl(176, 100%, 44%); }
 .screen {
     border-radius: 0.6em;
     height: 4em;
@@ -74,11 +97,18 @@ input::-moz-range-thumb {
     padding: 1.2em;
     position: absolute;
     left: 50%;
-    top: 28%;
+    top: 11.1em;
     transform: translate(-50%, -50%);
     color: #fff;
+    transition: background-color 0.5s;
 }
 .screen1 { background-color: hsl(224, 36%, 15%); }
+.screen2 { background-color: hsl(0, 0%, 93%); }
+.screen3 { background-color: hsl(268, 71%, 12%); }
+#digits { transition: color 0.5s; }
+.digits1 { color: #fff; }
+.digits2 { color: hsl(60, 10%, 19%); }
+.digits3 { color: hsl(52, 100%, 62%); }
 .pad {
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -89,32 +119,44 @@ input::-moz-range-thumb {
     width: 23.15em;
     position: absolute;
     left: 50%;
-    top: 65%;
+    top: 25.5em;
     transform: translate(-50%, -50%);
+    transition: background-color 0.5s;
 }
 .pad1 { background-color: hsl(223, 31%, 20%); }
+.pad2 { background-color: hsl(0, 5%, 81%); }
+.pad3 { background-color: hsl(268, 71%, 12%); }
 button {
     border-radius: 0.25em;
     border: none;
     font-size: 1.8em;
 }
-.btn1 {
+.btn1, .btn2, .btn3 {
     background-color: hsl(30, 25%, 89%);
     box-shadow: 0 0.1em hsl(28, 16%, 65%);
     color: hsl(221, 14%, 31%);
     width: 2.8em;
+    transition: background-color 0.5s, box-shadow 0.5s, color 0.5s;
 }
+.btn2 {background-color:hsl(45, 7%, 89%);box-shadow:0 0.1em hsl(35, 11%, 61%);color:hsl(60, 10%, 19%);}
+.btn3 {background-color:hsl(268, 47%, 21%);box-shadow:0 0.1em hsl(290, 70%, 36%);color:hsl(52, 100%, 62%);}
 .bigger-one { grid-column-start: 1; grid-column-end: 3; }
 .bigger-two { grid-column-start: 3; grid-column-end: 5; }
-.grey1 {
+.grey1, .grey2, .grey3 {
     background-color: hsl(225, 21%, 49%);
     box-shadow: 0 0.15em hsl(224, 28%, 35%);
     color: #fff;
     font-size: 1.2em;
     border-radius: 0.375em;
+    transition: background-color 0.5s, box-shadow 0.5s;
 }
-.red1 {
+.grey2 {background-color: hsl(185, 42%, 37%); box-shadow:0 0.15em hsl(185, 58%, 25%);}
+.grey3 {background-color: hsl(281, 89%, 26%); box-shadow:0 0.15em hsl(285, 91%, 52%);}
+.red1, .red2, .red3 {
     background-color: hsl(6, 63%, 50%);
     box-shadow: 0 0.1em hsl(6, 70%, 34%);
     color: #fff;
+    transition: background-color 0.5s, box-shadow 0.5s, color 0.5s;
 }
+.red2 {background-color: hsl(25, 98%, 40%); box-shadow:0 0.1em  hsl(25, 99%, 27%);}
+.red3 {background-color:hsl(176, 100%, 44%);box-shadow:0 0.1em hsl(177, 92%, 70%);color:hsl(198, 20%, 13%);}
