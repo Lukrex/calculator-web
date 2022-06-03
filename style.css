@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+.attribution a { color: hsl(7, 69%, 55%); text-decoration: none; }
+.attribution { 
+    font-size: 0.7em; 
+    text-align: center; 
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%;
+}
+* { font-family: 'League Spartan', sans-serif; }
+body { 
+    font-size: 16px;
+}
+.body1 { background-color: hsl(222, 26%, 31%); }
+.header { 
+    position: absolute;
+    left: 50%;
+    top: 12%;
+    transform: translate(-420%, -50%);
+    color: #fff;
+    font-size: 1.8em;
+}
+.p-theme {
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 12%;
+    transform: translate(50%, -50%);
+}
+.t1, .t2, .t3 {
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 8%;
+    transform: translate(2000%, -50%);
+}
+.t2 { transform: translate(1500%, -50%); }
+input {
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    border-radius: 2em;
+    position: absolute;
+    left: 50%;
+    top: 14.1%;
+    transform: translate(105%, -50%);
+    height: 1.5em;
+    width: 6em;
+    padding: 0 0.4em;
+    cursor: pointer;
+}
+input::-webkit-slider-thumb {
+    width: 0.95em;
+    height: 0.95em;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+input::-moz-range-thumb {
+    width: 0.95em;
+    height: 0.95em;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+.input1 { background-color: hsl(223, 31%, 20%); }
+.input1::-webkit-slider-thumb {background: hsl(6, 63%, 50%);}
+.input1::-moz-range-thumb {background: hsl(6, 63%, 50%);}
+.screen {
+    border-radius: 0.6em;
+    height: 4em;
+    width: 23.15em;
+    padding: 1.2em;
+    position: absolute;
+    left: 50%;
+    top: 28%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+.screen1 { background-color: hsl(224, 36%, 15%); }
+.pad {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 1.2em;
+    border-radius: 0.6em;
+    gap: 1em 0.9em;
+    height: 18em;
+    width: 23.15em;
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+}
+.pad1 { background-color: hsl(223, 31%, 20%); }
+button {
+    border-radius: 0.25em;
+    border: none;
+    font-size: 1.8em;
+}
+.btn1 {
+    background-color: hsl(30, 25%, 89%);
+    box-shadow: 0 0.1em hsl(28, 16%, 65%);
+    color: hsl(221, 14%, 31%);
+    width: 2.8em;
+}
+.bigger-one { grid-column-start: 1; grid-column-end: 3; }
+.bigger-two { grid-column-start: 3; grid-column-end: 5; }
+.grey1 {
+    background-color: hsl(225, 21%, 49%);
+    box-shadow: 0 0.15em hsl(224, 28%, 35%);
+    color: #fff;
+    font-size: 1.2em;
+    border-radius: 0.375em;
+}
+.red1 {
+    background-color: hsl(6, 63%, 50%);
+    box-shadow: 0 0.1em hsl(6, 70%, 34%);
+    color: #fff;
+}
