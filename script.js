@@ -74,18 +74,44 @@ function theme3() {
 
 function writeDigits(btn) {
     if (digits.innerHTML.length >= 15) { return; } //max 15 digits limit
+
     if (digits.innerHTML === '' && btn.innerHTML === '0') { return; } //disable zeros when clear
+
     if (digits.innerHTML === '' && btn.innerHTML === '.') { digits.innerHTML = '0'; } //add zero when first is point
+    
     if (btn.innerHTML === '.' && digits.innerHTML[digits.innerHTML.length - 1] === '+') {digits.innerHTML += '0';} //add zero when point after signs
     if (btn.innerHTML === '.' && digits.innerHTML[digits.innerHTML.length - 1] === '-') {digits.innerHTML += '0';} //add zero when point after signs
     if (btn.innerHTML === '.' && digits.innerHTML[digits.innerHTML.length - 1] === 'x') {digits.innerHTML += '0';} //add zero when point after signs
     if (btn.innerHTML === '.' && digits.innerHTML[digits.innerHTML.length - 1] === '/') {digits.innerHTML += '0';} //add zero when point after signs
+
+    if (btn.innerHTML === '+' && digits.innerHTML[digits.innerHTML.length - 1] === '+') {deleteDigit();} //disallow duplicate symbols
+    if (btn.innerHTML === '+' && digits.innerHTML[digits.innerHTML.length - 1] === '-') {deleteDigit();} //disallow duplicate symbols
+    if (btn.innerHTML === '+' && digits.innerHTML[digits.innerHTML.length - 1] === 'x') {deleteDigit();} //disallow duplicate symbols
+    if (btn.innerHTML === '+' && digits.innerHTML[digits.innerHTML.length - 1] === '/') {deleteDigit();} //disallow duplicate symbols
+    if (btn.innerHTML === '+' && digits.innerHTML[digits.innerHTML.length - 1] === '.') {deleteDigit();} //disallow duplicate symbols
+    if (btn.innerHTML === '-' && digits.innerHTML[digits.innerHTML.length - 1] === '+') {deleteDigit();} //disallow duplicate symbols
+    if (btn.innerHTML === '-' && digits.innerHTML[digits.innerHTML.length - 1] === '-') {deleteDigit();} //disallow duplicate symbols
+    if (btn.innerHTML === '-' && digits.innerHTML[digits.innerHTML.length - 1] === 'x') {deleteDigit();} //disallow duplicate symbols
+    if (btn.innerHTML === '-' && digits.innerHTML[digits.innerHTML.length - 1] === '/') {deleteDigit();} //disallow duplicate symbols
+    if (btn.innerHTML === '-' && digits.innerHTML[digits.innerHTML.length - 1] === '.') {deleteDigit();} //disallow duplicate symbols
+    if (btn.innerHTML === 'x' && digits.innerHTML[digits.innerHTML.length - 1] === '+') {deleteDigit();} //disallow duplicate symbols
+    if (btn.innerHTML === 'x' && digits.innerHTML[digits.innerHTML.length - 1] === '-') {deleteDigit();} //disallow duplicate symbols
+    if (btn.innerHTML === 'x' && digits.innerHTML[digits.innerHTML.length - 1] === 'x') {deleteDigit();} //disallow duplicate symbols
+    if (btn.innerHTML === 'x' && digits.innerHTML[digits.innerHTML.length - 1] === '/') {deleteDigit();} //disallow duplicate symbols
+    if (btn.innerHTML === 'x' && digits.innerHTML[digits.innerHTML.length - 1] === '.') {deleteDigit();} //disallow duplicate symbols
+    if (btn.innerHTML === '/' && digits.innerHTML[digits.innerHTML.length - 1] === '+') {deleteDigit();} //disallow duplicate symbols
+    if (btn.innerHTML === '/' && digits.innerHTML[digits.innerHTML.length - 1] === '-') {deleteDigit();} //disallow duplicate symbols
+    if (btn.innerHTML === '/' && digits.innerHTML[digits.innerHTML.length - 1] === 'x') {deleteDigit();} //disallow duplicate symbols
+    if (btn.innerHTML === '/' && digits.innerHTML[digits.innerHTML.length - 1] === '/') {deleteDigit();} //disallow duplicate symbols
+    if (btn.innerHTML === '/' && digits.innerHTML[digits.innerHTML.length - 1] === '.') {deleteDigit();} //disallow duplicate symbols
+    
     digits.innerHTML = digits.innerHTML.replaceAll(" ", "");
     digits.innerHTML += btn.innerHTML;
     digits.innerHTML = numberWithSpaces(digits.innerHTML);
 }
 function deleteDigit() {
-    digits.innerHTML = digits.innerHTML.slice(0, -1);
+    digits.innerHTML = digits.innerHTML.replaceAll(" ", "");
+    digits.innerHTML = numberWithSpaces(digits.innerHTML.slice(0, -1));
 }
 function reset() {
     digits.innerHTML = "";
