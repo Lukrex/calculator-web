@@ -15,6 +15,7 @@
 * { font-family: 'League Spartan', sans-serif; }
 body {
     font-size: 16px;
+    
     user-select: none;
     transition: background-color 0.5s;
 }
@@ -37,8 +38,9 @@ body {
     position: absolute;
     left: 50%;
     top: 6.8em;
-    transform: translate(250%, -50%);
+    transform: translate(205%, -50%);
     font-size: 0.7em;
+    letter-spacing: 0.1em;
     transition: color 0.5s;
 }
 .p-theme2 { color: hsl(60, 10%, 19%); }
@@ -61,6 +63,7 @@ input {
     appearance: none;
     outline: none;
     border-radius: 2em;
+    font-size: 0.834em;
     position: absolute;
     left: 50%;
     top: 6.35em;
@@ -72,16 +75,16 @@ input {
     transition: background-color 0.5s;
 }
 input::-webkit-slider-thumb {
-    width: 0.95em;
-    height: 0.95em;
+    width: 0.9em;
+    height: 0.9em;
     border-radius: 50%;
     -webkit-appearance: none;
     appearance: none;
     cursor: pointer;
 }
 input::-moz-range-thumb {
-    width: 0.95em;
-    height: 0.95em;
+    width: 0.9em;
+    height: 0.9em;
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -128,7 +131,7 @@ input::-moz-range-thumb {
     grid-template-columns: auto auto auto auto;
     padding: 1.2em;
     border-radius: 0.6em;
-    gap: 1em 0.9em;
+    gap: 1.1em 1em;
     height: 18em;
     width: 23.15em;
     position: absolute;
@@ -171,6 +174,7 @@ button {
     background-color: hsl(6, 63%, 50%);
     box-shadow: 0 0.1em hsl(6, 70%, 34%);
     color: #fff;
+    font-size: 1.8em;
     transition: background-color 0.5s, box-shadow 0.5s, color 0.5s;
 }
 .red2 {background-color: hsl(25, 98%, 40%); box-shadow:0 0.1em  hsl(25, 99%, 27%);}
@@ -179,4 +183,44 @@ button {
 
 @keyframes btn-click {
     10% { filter: brightness(0.9); transform: scale(0.9); box-shadow: none; }
+}
+
+@media screen and (max-width: 550px) {
+    body { font-size: 10px; }
+    .pad {
+        width: 21.59em; height: 28em;
+        top: 32.2em; padding: 2em;
+    }
+    .header1, .header2, .header3 {
+        font-size: 3em;
+        transform: translate(-250%, -50%);
+        top: 4.5%;
+    }
+    .p-theme1, .p-theme2, .p-theme3 {
+        font-size: 0.9em;
+        transform: translate(100%, -50%);
+        top: 7.65%;
+    }
+    .t1 { transform: translate(3900%, -50%); }
+    .t2 { transform: translate(2550%, -50%); }
+    .t3 { transform: translate(3090%, -50%); }
+    input { 
+        height: 2em;
+        width: 4.667em;
+        transform: translate(175%, -50%);
+    }
+    input::-webkit-slider-thumb {
+        height: 1.2em;
+        width: 1.2em;
+    }
+    input::-moz-range-thumb {
+        height: 1.2em;
+        width: 1.2em;
+    }
+    .btn1, .btn2, .btn3 { 
+        font-size: 2.6em;
+        width: 1.78em;
+    }
+    .grey1, .grey2, .grey3 { font-size: 1.6em; }
+    #red { box-shadow: 0 0.15em hsl(6, 70%, 34%); }
 }
