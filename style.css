@@ -7,10 +7,15 @@
     left: 0; bottom: 0;
     width: 100%;
     z-index: -999;
+    transform: scale(0.75);
+    filter: opacity(0.5);
+    transition: transform 0.2s, filter 0.2s;
 }
+.attribution:hover { transform: scale(1); filter: opacity(1); }
 * { font-family: 'League Spartan', sans-serif; }
-body { 
+body {
     font-size: 16px;
+    user-select: none;
     transition: background-color 0.5s;
 }
 .body1 { background-color: hsl(222, 26%, 31%); }
@@ -105,7 +110,16 @@ input::-moz-range-thumb {
 .screen1 { background-color: hsl(224, 36%, 15%); }
 .screen2 { background-color: hsl(0, 0%, 93%); }
 .screen3 { background-color: hsl(268, 71%, 12%); }
-#digits { transition: color 0.5s; }
+#digits {
+    position: relative;
+    top: -0.65em;
+    text-align:right;
+    font-size: 2.8em;
+    transition: color 0.5s;
+}
+#digits:empty:not(:focus)::before {
+    content: attr(placeholder);
+}
 .digits1 { color: #fff; }
 .digits2 { color: hsl(60, 10%, 19%); }
 .digits3 { color: hsl(52, 100%, 62%); }
@@ -129,6 +143,7 @@ input::-moz-range-thumb {
 button {
     border-radius: 0.25em;
     border: none;
+    cursor: pointer;
     font-size: 1.8em;
 }
 .btn1, .btn2, .btn3 {
@@ -160,3 +175,8 @@ button {
 }
 .red2 {background-color: hsl(25, 98%, 40%); box-shadow:0 0.1em  hsl(25, 99%, 27%);}
 .red3 {background-color:hsl(176, 100%, 44%);box-shadow:0 0.1em hsl(177, 92%, 70%);color:hsl(198, 20%, 13%);}
+.btn-click { animation: btn-click 0.3s ease-in-out; }
+
+@keyframes btn-click {
+    10% { filter: brightness(0.9); transform: scale(0.9); box-shadow: none; }
+}
