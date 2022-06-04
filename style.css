@@ -186,20 +186,22 @@ button {
 }
 
 @media screen and (max-width: 550px) {
-    body { font-size: 10px; }
+    body { font-size: 11px; }
+    .screen { padding: 2em; height: 2em; width: 21.5em; }
     .pad {
         width: 21.59em; height: 28em;
-        top: 32.2em; padding: 2em;
+        top: 31.9em; padding: 2em;
     }
+    #digits { top: -1.05em; }
     .header1, .header2, .header3 {
         font-size: 3em;
         transform: translate(-250%, -50%);
-        top: 4.5%;
+        top: 1em;
     }
     .p-theme1, .p-theme2, .p-theme3 {
         font-size: 0.9em;
         transform: translate(100%, -50%);
-        top: 7.65%;
+        top: 5.25em;
     }
     .t1 { transform: translate(3900%, -50%); }
     .t2 { transform: translate(2550%, -50%); }
