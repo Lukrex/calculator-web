@@ -71,3 +71,37 @@ function theme3() {
     for (let i = 0; i < grey.length; i++) { grey[i].classList.remove('grey2');
     grey[i].classList.add('grey3'); }
 }
+
+function writeDigits(btn) {
+    if (digits.innerHTML.length >= 15) { return; }
+    else if (digits.innerHTML === '' && btn.innerHTML === '0') { return; }
+    else if (digits.innerHTML === '' && btn.innerHTML === '.') { digits.innerHTML = '0'; }
+    digits.innerHTML = digits.innerHTML.replaceAll(" ", "");
+    digits.innerHTML += btn.innerHTML;
+    digits.innerHTML = numberWithSpaces(digits.innerHTML);
+}
+function deleteDigit() {
+    digits.innerHTML = digits.innerHTML.slice(0, -1);
+}
+function reset() {
+    digits.innerHTML = "";
+}
+function calculate() {
+    var optimizedDigits = digits.innerHTML.replaceAll("x", "*").replaceAll(" ", "");
+    digits.innerHTML = numberWithSpaces(eval(optimizedDigits));
+    if (digits.innerHTML.includes(".")) {
+        digits.innerHTML = numberWithSpaces(Math.round((eval(optimizedDigits) + Number.EPSILON) * 1000) / 1000);
+    }
+    //http://mikemcl.github.io/decimal.js/ maybe
+}
+
+function numberWithSpaces(x) {
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    return parts.join(".");
+}
+
+function clickAnimation(btn) {
+    btn.classList.add("btn-click");
+    setTimeout(function(){btn.classList.remove("btn-click")}, 300);
+}

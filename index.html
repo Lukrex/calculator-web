@@ -16,29 +16,29 @@
     <p class="numbers1 t1">1</p>
     <p class="numbers1 t2">2</p>
     <p class="numbers1 t3">3</p>
-    <input id="input" class="input1" type="range" min="1" max="3" value="1">
+    <input id="input" class="input1" type="range" min="1" max="3" value="1" aria-label="Select theme">
     <div id="screen" class="screen screen1">
-      <p id="digits" class="digits1"></p>
+      <p id="digits" class="digits1" placeholder="0" contenteditable></p>
     </div>
     <div id="pad" class="pad pad1">
-      <button class="btn1">7</button>
-      <button class="btn1">8</button>
-      <button class="btn1">9</button>
-      <button class="grey1">DEL</button>
-      <button class="btn1">4</button>
-      <button class="btn1">5</button>
-      <button class="btn1">6</button>
-      <button class="btn1">+</button>
-      <button class="btn1">1</button>
-      <button class="btn1">2</button>
-      <button class="btn1">3</button>
-      <button class="btn1">-</button>
-      <button class="btn1">.</button>
-      <button class="btn1">0</button>
-      <button class="btn1">/</button>
-      <button class="btn1">x</button>
-      <button class="bigger-one grey1">RESET</button>
-      <button id="red" class="bigger-two red1">=</button>
+      <button class="btn1" onclick="clickAnimation(this); writeDigits(this)">7</button>
+      <button class="btn1" onclick="clickAnimation(this); writeDigits(this)">8</button>
+      <button class="btn1" onclick="clickAnimation(this); writeDigits(this)">9</button>
+      <button class="grey1" onclick="clickAnimation(this); deleteDigit()">DEL</button>
+      <button class="btn1" onclick="clickAnimation(this); writeDigits(this)">4</button>
+      <button class="btn1" onclick="clickAnimation(this); writeDigits(this)">5</button>
+      <button class="btn1" onclick="clickAnimation(this); writeDigits(this)">6</button>
+      <button class="btn1" onclick="clickAnimation(this); writeDigits(this)">+</button>
+      <button class="btn1" onclick="clickAnimation(this); writeDigits(this)">1</button>
+      <button class="btn1" onclick="clickAnimation(this); writeDigits(this)">2</button>
+      <button class="btn1" onclick="clickAnimation(this); writeDigits(this)">3</button>
+      <button class="btn1" onclick="clickAnimation(this); writeDigits(this)">-</button>
+      <button class="btn1" onclick="clickAnimation(this); writeDigits(this)">.</button>
+      <button class="btn1" onclick="clickAnimation(this); writeDigits(this)">0</button>
+      <button class="btn1" onclick="clickAnimation(this); writeDigits(this)">/</button>
+      <button class="btn1" onclick="clickAnimation(this); writeDigits(this)">x</button>
+      <button class="bigger-one grey1" onclick="clickAnimation(this); reset()">RESET</button>
+      <button id="red" class="bigger-two red1" onclick="clickAnimation(this); calculate();">=</button>
     </div>
   </main>
   <footer class="attribution">
