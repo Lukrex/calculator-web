@@ -121,7 +121,7 @@ input::-moz-range-thumb {
     transition: color 0.5s;
 }
 #digits:empty:not(:focus)::before {
-    content: attr(placeholder);
+    content: attr(data-placeholder);
 }
 .digits1 { color: #fff; }
 .digits2 { color: hsl(60, 10%, 19%); }
