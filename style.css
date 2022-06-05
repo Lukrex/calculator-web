@@ -9,7 +9,7 @@
     z-index: -999;
     transform: scale(0.75);
     filter: opacity(0.5);
-    transition: transform 0.2s, filter 0.2s;
+    transition: transform 0.2s ease-in, filter 0.2s ease-in;
 }
 .attribution:hover { transform: scale(1); filter: opacity(1); }
 * { font-family: 'League Spartan', sans-serif; }
