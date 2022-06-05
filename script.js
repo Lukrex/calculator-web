@@ -16,10 +16,13 @@ function changeTheme() {
     let theme = input.value;
     if (theme === "1") {
         theme1();
+        document.cookie = "theme=1;";
     } else if (theme === "2") {
         theme2();
+        document.cookie = "theme=2;";
     } else if (theme === "3") {
         theme3();
+        document.cookie = "theme=3;";
     } else { return; }
 }
 
@@ -76,7 +79,11 @@ function writeDigits(btn) {
     if (digits.innerHTML.length >= 15) { return; } //max 15 digits limit
 
     if (digits.innerHTML === '' && btn.innerHTML === '0') { return; } //disable zeros when clear
-
+    
+    if (digits.innerHTML === '' && btn.innerHTML === '+') { digits.innerHTML += '0'; } //add zero when first is symbol
+    if (digits.innerHTML === '' && btn.innerHTML === '-') { digits.innerHTML += '0'; } //add zero when first is symbol
+    if (digits.innerHTML === '' && btn.innerHTML === 'x') { digits.innerHTML += '0'; } //add zero when first is symbol
+    if (digits.innerHTML === '' && btn.innerHTML === '/') { digits.innerHTML += '0'; } //add zero when first is symbol
     if (digits.innerHTML === '' && btn.innerHTML === '.') { digits.innerHTML = '0'; } //add zero when first is point
     
     if (btn.innerHTML === '.' && digits.innerHTML[digits.innerHTML.length - 1] === '+') {digits.innerHTML += '0';} //add zero when point after signs
@@ -108,13 +115,16 @@ function writeDigits(btn) {
     digits.innerHTML = digits.innerHTML.replaceAll(" ", "");
     digits.innerHTML += btn.innerHTML;
     digits.innerHTML = numberWithSpaces(digits.innerHTML);
+    document.cookie = `digits=${digits.innerHTML};`;
 }
 function deleteDigit() {
     digits.innerHTML = digits.innerHTML.replaceAll(" ", "");
     digits.innerHTML = numberWithSpaces(digits.innerHTML.slice(0, -1));
+    document.cookie = `digits=${digits.innerHTML};`;
 }
 function reset() {
     digits.innerHTML = "";
+    document.cookie = `digits=${digits.innerHTML};`;
 }
 function calculate() {
     var optimizedDigits = digits.innerHTML.replaceAll("x", "*").replaceAll(" ", "");
@@ -122,7 +132,7 @@ function calculate() {
     if (digits.innerHTML.includes(".")) {
         digits.innerHTML = numberWithSpaces(Math.round((eval(optimizedDigits) + Number.EPSILON) * 1000) / 1000);
     }
-    //http://mikemcl.github.io/decimal.js/ maybe
+    document.cookie = `digits=${digits.innerHTML};`;
 }
 
 function numberWithSpaces(x) {
@@ -134,4 +144,15 @@ function numberWithSpaces(x) {
 function clickAnimation(btn) {
     btn.classList.add("btn-click");
     setTimeout(function(){btn.classList.remove("btn-click")}, 300);
+}
+
+window.onload = function() {
+    let screenDigits = document.cookie.substring(16);
+    let themeNum = document.cookie.charAt(6);
+    console.log(document.cookie);
+    digits.innerHTML = screenDigits;
+    if (themeNum === "1") { theme1(); input.value = "1"; }
+    else if (themeNum === "2") { theme2(); input.value = "2"; }
+    else if (themeNum === "3") { theme3(); input.value = "3"; }
+    else { document.cookie = "theme=1;"; }
 }
